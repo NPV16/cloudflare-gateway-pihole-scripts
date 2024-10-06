@@ -5,11 +5,11 @@ on:
     - cron: "0 3 * * 1"
   push:
     branches:
-      - main
+      - main.yml
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflows }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 env:
